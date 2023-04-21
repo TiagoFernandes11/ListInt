@@ -1,16 +1,16 @@
 public class ListInt {
-    private Node node;
+    private Node head;
 
     public ListInt() {
     }
 
     public void add(int number) {
-        if (node == null) {
-            node = new Node(number);
+        if (head == null) {
+            head = new Node(number);
             return;
         } else {
-            Node aux = this.node;
-            while (node.getNext() != null) {
+            Node aux = head;
+            while (aux.getNext() != null) {
                 aux = aux.getNext();
             }
             aux.setNext(new Node(number));
@@ -18,12 +18,11 @@ public class ListInt {
     }
 
     public int size() {
-        if (node == null) {
+        if (head == null) {
             return 0;
         }
-
         int count = 1;
-        Node aux = this.node;
+        Node aux = this.head;
         while (aux.getNext() != null) {
             aux = aux.getNext();
             count++;
@@ -33,7 +32,7 @@ public class ListInt {
 
     public void remove(int number) {
         Node previousNode = null;
-        Node currentNode = this.node;
+        Node currentNode = this.head;
 
         while (currentNode.getValor() != number) {
             previousNode = currentNode;
@@ -44,5 +43,22 @@ public class ListInt {
         }
         previousNode.setNext(currentNode.getNext());
     }
+
+    public Integer get(int index){
+        if(index+1 > size()){
+            System.out.println("Numero invalido");
+            return null;
+        }
+
+        int count = 0;
+        Node aux = this.head;
+        while(count != index){
+            aux = aux.getNext();
+            count++;
+        }
+        return aux.getValor();
+    }
+
+
 
 }
