@@ -44,21 +44,31 @@ public class ListInt {
         previousNode.setNext(currentNode.getNext());
     }
 
-    public Integer get(int index){
-        if(index+1 > size()){
+    public Integer get(int index) {
+        if (index + 1 > size()) {
             System.out.println("Numero invalido");
             return null;
         }
 
         int count = 0;
         Node aux = this.head;
-        while(count != index){
+        while (count != index && count < size()) {
             aux = aux.getNext();
             count++;
         }
         return aux.getValor();
     }
 
-
+    public void insert(int position, int number) {
+        int count = 0;
+        Node aux = head;
+        while (count < position && count < size()) {
+            aux = aux.getNext();
+            count++;
+        }
+        Node temp = new Node(aux.getValor(), aux.getNext()) ;
+        aux.setValor(number);
+        aux.setNext(temp);
+    }
 
 }

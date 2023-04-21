@@ -10,11 +10,9 @@ public class test {
         list.add(1);
         list.add(1);
         list.add(1);
-        System.out.println(list.size());
         System.out.println(list.get(3));
-        list.remove(6);
-        System.out.println(list.size());
+        list.insert(3, 24);
         System.out.println(list.get(3));
-
+        System.out.println(list.get(4));
     }
 }
