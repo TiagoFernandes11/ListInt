@@ -71,4 +71,16 @@ public class ListInt {
         aux.setNext(temp);
     }
 
+    public boolean contains(int number){
+        int count = 0;
+        Node aux = head;
+        while(count < size()){
+            if(aux.getValor() == number){
+                return true;
+            }
+            aux = aux.getNext();
+            count++;
+        }
+        return false;
+    }
 }
