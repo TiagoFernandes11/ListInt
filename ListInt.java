@@ -4,16 +4,16 @@ public class ListInt {
     public ListInt() {
     }
 
-    public void add(int numero) {
+    public void add(int number) {
         if (node == null) {
-            node = new Node(numero);
+            node = new Node(number);
             return;
         } else {
             Node aux = this.node;
             while (node.getNext() != null) {
                 aux = aux.getNext();
             }
-            aux.setNext(new Node(numero));
+            aux.setNext(new Node(number));
         }
     }
 
@@ -29,6 +29,20 @@ public class ListInt {
             count++;
         }
         return count;
+    }
+
+    public void remove(int number) {
+        Node previousNode = null;
+        Node currentNode = this.node;
+
+        while (currentNode.getValor() != number) {
+            previousNode = currentNode;
+            currentNode = currentNode.getNext();
+            if (currentNode == null) {
+                return;
+            }
+        }
+        previousNode.setNext(currentNode.getNext());
     }
 
 }
