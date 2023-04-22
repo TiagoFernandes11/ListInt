@@ -60,6 +60,10 @@ public class ListInt {
     }
 
     public void insert(int position, int number) {
+        if(position == size()){
+            add(number);
+            return;
+        }
         int count = 0;
         Node aux = head;
         while (count < position && count < size()) {
