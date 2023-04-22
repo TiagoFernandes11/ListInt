@@ -31,7 +31,7 @@ public class ListInt {
     }
 
     public void remove(int number) {
-        if(size() == 0){
+        if (size() == 0) {
             System.out.println("Error: The list is empty");
             return;
         }
@@ -65,7 +65,7 @@ public class ListInt {
     }
 
     public void insert(int position, int number) {
-        if(position == size()){
+        if (position == size()) {
             add(number);
             return;
         }
