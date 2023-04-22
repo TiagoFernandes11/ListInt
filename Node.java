@@ -1,25 +1,25 @@
 public class Node {
-    private Integer valor;
+    private Integer value;
     private Node next;
-    
+
     public Node() {
     }
 
     public Node(Integer valor) {
-        this.valor = valor;
+        this.value = valor;
     }
 
     public Node(Integer valor, Node next) {
-        this.valor = valor;
+        this.value = valor;
         this.next = next;
     }
 
-    public Integer getValor() {
-        return valor;
+    public Integer getValue() {
+        return value;
     }
 
-    public void setValor(Integer valor) {
-        this.valor = valor;
+    public void setValue(Integer valor) {
+        this.value = valor;
     }
 
     public Node getNext() {
@@ -29,6 +29,5 @@ public class Node {
     public void setNext(Node next) {
         this.next = next;
     }
-    
-    
+
 }

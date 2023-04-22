@@ -34,7 +34,7 @@ public class ListInt {
         Node previousNode = null;
         Node currentNode = this.head;
 
-        while (currentNode.getValor() != number) {
+        while (currentNode.getValue() != number) {
             previousNode = currentNode;
             currentNode = currentNode.getNext();
             if (currentNode == null) {
@@ -56,7 +56,7 @@ public class ListInt {
             aux = aux.getNext();
             count++;
         }
-        return aux.getValor();
+        return aux.getValue();
     }
 
     public void insert(int position, int number) {
@@ -66,16 +66,16 @@ public class ListInt {
             aux = aux.getNext();
             count++;
         }
-        Node temp = new Node(aux.getValor(), aux.getNext()) ;
-        aux.setValor(number);
+        Node temp = new Node(aux.getValue(), aux.getNext());
+        aux.setValue(number);
         aux.setNext(temp);
     }
 
-    public boolean contains(int number){
+    public boolean contains(int number) {
         int count = 0;
         Node aux = head;
-        while(count < size()){
-            if(aux.getValor() == number){
+        while (count < size()) {
+            if (aux.getValue() == number) {
                 return true;
             }
             aux = aux.getNext();
