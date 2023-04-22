@@ -31,6 +31,10 @@ public class ListInt {
     }
 
     public void remove(int number) {
+        if(size() == 0){
+            System.out.println("Error: The list is empty");
+            return;
+        }
         Node previousNode = null;
         Node currentNode = this.head;
 
@@ -38,6 +42,7 @@ public class ListInt {
             previousNode = currentNode;
             currentNode = currentNode.getNext();
             if (currentNode == null) {
+                System.out.println("Error: Invalid number");
                 return;
             }
         }
@@ -46,7 +51,7 @@ public class ListInt {
 
     public Integer get(int index) {
         if (index + 1 > size()) {
-            System.out.println("Numero invalido");
+            System.out.println("Error: Invalid number");
             return null;
         }
 
